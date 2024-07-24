@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weboldal Bootstrap-al</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .main-content {
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .hero-image {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center;
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-image h1, .hero-image h3 {
+            margin: 0;
+        }
+        .hero-image .btn {
+            margin-top: 20px;
+        }
+        .widget {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .widget-title {
+            margin: -15px -15px 15px -15px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        a {
+            color: #007bff;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigációs rész -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Junior Frontend Blog <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Főoldal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rólam</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kapcsolat</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Teljes szélességű kép -->
+    <div class="hero-image">
+        <h1>Üdvözöljük a weboldalunkon</h1>
+        <h3>Rövid leírás vagy szlogen</h3>
+        <a href="#" class="btn btn-primary">Olvass tovább</a>
+    </div>
+
+    <!-- Fő tartalom rész -->
+    <div class="container main-content">
+        <div class="row">
+            <!-- Fő rész -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/750x300" alt="Kép 1">
+                    <div class="card-body">
+                        <h2 class="card-title">első sor kód</h2>
+                        <h4 class="card-text">Leírás 1</h4>
+                        <a href="#" class="btn btn-primary">Olvass tovább</a>
+                        <div class="card-footer border-top">
+                            <span>Feltöltési dátum: 2024-07-24</span>
+                            <span>Feladó: Feladó neve</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/750x300" alt="Kép 2">
+                    <div class="card-body">
+                        <h2 class="card-title">flexbox vagy grid?</h2>
+                        <h4 class="card-text">Leírás 2</h4>
+                        <a href="bootsrtap_gyak_2.html" class="btn btn-primary">Olvass tovább</a>
+                        <div class="card-footer border-top">
+                            <span>Feltöltési dátum: 2024-07-24</span>
+                            <span>Feladó: Feladó neve</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Widget rész -->
+            <div class="col-mt-4">
+                <div class="widget mb-4">
+                    <h2 class="widget-title bg-primary text-white p-2">Blogkereső</h2>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Keresés...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Keresés</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="widget">
+                    <h2 class="widget-title bg-primary text-white p-2">Kategóriák</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#" class="d-block mb-2">HTML</a>
+                            <a href="#" class="d-block mb-2">CSS</a>
+                            <a href="#" class="d-block mb-2">Bootstrap</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="d-block mb-2">Flexbox</a>
+                            <a href="#" class="d-block mb-2">Grid</a>
+                            <a href="#" class="d-block mb-2">VSCode</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript és jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
