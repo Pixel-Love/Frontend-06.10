@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Feladatok</title>
+</head>
+<body>
+    <script>
+        // 1. nevünket 20-szor
+        let nev = "Erik";
+        for (let i = 0; i < 20; i++) {
+            console.log(nev);
+        }
+
+        // 2. 10 és 50 közötti számokat
+        for (let i = 11; i < 50; i++) {
+            console.log(i);
+        }
+
+        // 3. string -> tömb
+        let szamokStr = '5,10,3,65,53,31';
+        let szamokTomb = szamokStr.split(',');
+        for (let i = 0; i < szamokTomb.length; i++) {
+            console.log(`A lista ${i + 1}. eleme: ${szamokTomb[i]}`);
+        }
+
+        // 4. 20 db random szám és szétválogatása
+        let paros = [];
+        let paratlan = [];
+        for (let i = 0; i < 20; i++) {
+            let randomSzam = Math.floor(Math.random() * 151);
+            if (randomSzam % 2 === 0) {
+                paros.push(randomSzam);
+            } else {
+                paratlan.push(randomSzam);
+            }
+        }
+        console.log(`Páros számok(${paros.length}db): ${paros.join(', ')}`);
+        console.log(`Páratlan számok(${paratlan.length}db): ${paratlan.join(', ')}`);
+
+        // 5. átlag objektumban
+        var tanulo = {
+            matematika: {
+                erdemjegyek: [4,3,5,5,2,4,3,1,5],
+                atlag: null
+            }
+        };
+
+        let jegyek = tanulo.matematika.erdemjegyek;
+        let osszeg = 0;
+        for (let i = 0; i < jegyek.length; i++) {
+            osszeg += jegyek[i];
+        }
+        let atlag = osszeg / jegyek.length;
+        tanulo.matematika.atlag = atlag;
+
+        console.log(tanulo);
+    </script>
+</body>
+</html>
