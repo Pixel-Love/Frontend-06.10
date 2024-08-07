@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Bemutatkozás</title>
+</head>
+
+<body>
+    <script>
+        //1
+        let keresztnev = "Erik";
+        console.log(keresztnev);
+
+        let welcome = "Üdvözöllek, a nevem: " + keresztnev;
+        console.log(welcome);
+
+        //2
+        let szam1 = 8;
+        let szam2 = 12;
+        let osszeg = szam1 + szam2;
+        console.log("A két szám összege: " + osszeg);
+
+        //3
+        let szinek = ["piros", "kék", "zöld", "sárga", "lila"];
+        console.log("A tömb 3. eleme: " + szinek[2]);
+
+        szinek[0] = "narancs";
+        alert("A tömb elemei: " + szinek.join(", "));
+        console.log("A tömb hossza: " + szinek.length);
+
+        //4
+        let kutya = {
+            nev: "Foxi",
+            fajta: "Foxterrier",
+            labak_szama: 4,
+            szin: "barna",
+            eletkor: 7,
+            harapos: false
+        };
+        kutya.eletkor += 1;
+        console.log(kutya.nev + " életkora: " + kutya.eletkor);
+    </script>
+</body>
+</html>
