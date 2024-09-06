@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>űrlap</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="mb-4">Adatok</h2>
+  <form id="userForm" novalidate>
+    <div class="form-group">
+      <label for="firstName">Keresztnév</label>
+      <input type="text" class="form-control" id="firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Vezetéknév</label>
+      <input type="text" class="form-control" id="lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email cím</label>
+      <input type="email" class="form-control" id="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefonszám</label>
+      <input type="tel" class="form-control" id="phone" required>
+    </div>
+    <button type="submit" class="btn btn-primary" id="submitBtn" disabled>Elküld</button>
+  </form>
+
+  <div class="card mt-5 d-none" id="userCard">
+    <div class="card-body">
+      <h5 class="card-title" id="cardName"></h5>
+      <p class="card-text"><strong>Email:</strong> <span id="cardEmail"></span></p>
+      <p class="card-text"><strong>Telefonszám:</strong> <span id="cardPhone"></span></p>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const form = document.getElementById('userForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const firstName = document.getElementById('firstName');
+  const lastName = document.getElementById('lastName');
+  const email = document.getElementById('email');
+  const phone = document.getElementById('phone');
+  const userCard = document.getElementById('userCard');
+  const cardName = document.getElementById('cardName');
+  const cardEmail = document.getElementById('cardEmail');
+  const cardPhone = document.getElementById('cardPhone');
+
+  function checkFormValidity() {
+    if (firstName.value && lastName.value && email.value && phone.value) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  }
+  
+  firstName.addEventListener('input', checkFormValidity);
+  lastName.addEventListener('input', checkFormValidity);
+  email.addEventListener('input', checkFormValidity);
+  phone.addEventListener('input', checkFormValidity);
+
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
+    
+    if (firstNameValue.length===0) {
+        alert("Kérlek tölts ki minden kötelező mezőt!");
+        return;
+    } else if (!firstNameValue.match(/^[A-Z][a-z]+$/) || !lastNameValue.test(/^[A-Z][a-z]+$/)){
+        alert("A név formátuma nem megfelelő!");
+        return;
+    } else if (!emailValue.test(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+        alert("Az e-mail cím formátuma nem megfelelő!");
+        return;
+    } else if (!phoneValue.test(/^(\+36|06)[\s-]?[1-9]\d[\s-]?\d{3}[\s-]?\d{4}$/)) {
+        alert("A születési idő formátuma nem megfelelő!");
+        return;
+    }
+    const user = {
+      firstName: firstNameValue,
+      lastName: lastNameValue,
+      email: emailValue,
+      phone: phoneValue
+    };
+
+    console.log(user);
+
+    cardName.textContent = `${user.firstName} ${user.lastName}`;
+    cardEmail.textContent = user.email;
+    cardPhone.textContent = user.phone;
+    
+    userCard.classList.remove('d-none');
+  });
+</script>
+
+</body>
+</html>
