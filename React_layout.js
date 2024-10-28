@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, Carousel, Card, Button, Form } from 'react-bootstrap';
+import { Container, Carousel, Card, Button, Form } from 'react-bootstrap';
 
 // Navbar
 function NavigationBar() {
@@ -66,6 +66,7 @@ function About() {
 
 };
 
+//(ez a function segítséggel)
 function Services() {
   const servicesList = [
     { title: "Web Development", description: "Building modern and responsive websites using React." },
@@ -91,7 +92,7 @@ function Services() {
   );
 }
 
-// Contact Form komponens
+// Contact Form
 function ContactForm() {
   return (
     <Container id="contact" className="my-5">
@@ -120,7 +121,7 @@ function ContactForm() {
   );
 }
 
-// App komponens (az összes komponens egyben)
+//(ez a része segítséggel)
 function App() {
   return (
     <>
